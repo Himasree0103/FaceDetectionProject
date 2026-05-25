@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 
 # Load models
-face_model = YOLO("models/yolov8n-face-lindevs.pt")
+face_model = YOLO("yolov8n-face-lindevs.pt")
 body_model = YOLO("yolov8n.pt")   # detects person/body
 
 st.title("Face and Body Detection")
