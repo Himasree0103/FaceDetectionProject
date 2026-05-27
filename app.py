@@ -5,10 +5,13 @@ import cv2
 import numpy as np
 
 # Load models
-face_model = YOLO("yolov8n-face-lindevs.pt")
+face_model = YOLO("models/yolov8n-face-lindevs.pt")
 body_model = YOLO("yolov8n.pt")   # detects person/body
 
 st.title("Face and Body Detection")
+
+# Information message
+st.info("Please upload only JPG, JPEG, or PNG image files.")
 
 # Options
 option = st.selectbox(
@@ -35,7 +38,7 @@ if uploaded:
         results = face_model(image_np)
 
         output = results[0].plot(
-            line_width=1,
+            line_width=2,
             font_size=0.5
         )
 
